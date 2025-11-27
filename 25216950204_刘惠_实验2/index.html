@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐在线播放器 - 25216950204_刘惠</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 背景图片轮播 -->
+        <div class="background-slider">
+            <img src="./img/bg0.png" class="bg active" alt="背景0">
+            <img src="./img/bg1.png" class="bg" alt="背景1">
+            <img src="./img/bg2.png" class="bg" alt="背景2">
+            <img src="./img/bg3.png" class="bg" alt="背景3">
+        </div>
+
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            <!-- 顶部信息 -->
+            <div class="top-info">
+                <h1>洛春赋</h1>
+                <p class="artist">作者：；刘惠</p>
+                <p class="student-info">学号：25216950204</p>
+            </div>
+
+            <!-- 唱片封面 -->
+            <div class="record-container">
+                <img src="./img/record0.jpg" class="record active" alt="唱片封面0">
+                <img src="./img/record1.jpg" class="record" alt="唱片封面1">
+                <img src="./img/record2.jpg" class="record" alt="唱片封面2">
+                <img src="./img/record3.jpg" class="record" alt="唱片封面3">
+                <div class="vinyl-center"></div>
+            </div>
+
+            <!-- 进度条 -->
+            <div class="progress-container">
+                <span class="time-current" id="currentTime">00:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-handle" id="progressHandle"></div>
+                </div>
+                <span class="time-total" id="totalTime">00:00</span>
+            </div>
+
+            <!-- 控制按钮 -->
+            <div class="controls">
+                <button class="control-btn" id="modeBtn">
+                    <img src="./img/mode1.png" alt="播放模式">
+                </button>
+                <button class="control-btn" id="prevBtn">
+                    <img src="./img/上一首.png" alt="上一首">
+                </button>
+                <button class="control-btn play-pause-btn" id="playPauseBtn">
+                    <img src="./img/暂停.png" alt="播放/暂停" id="playPauseIcon">
+                </button>
+                <button class="control-btn" id="nextBtn">
+                    <img src="./img/下一首.png" alt="下一首">
+                </button>
+                <button class="control-btn" id="listBtn">
+                    <img src="./img/列表.png" alt="播放列表">
+                </button>
+            </div>
+
+            <!-- 音量控制 -->
+            <div class="volume-control">
+                <button class="volume-btn" id="muteBtn">
+                    <img src="./img/音量.png" alt="音量" id="volumeIcon">
+                </button>
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-level" id="volumeLevel"></div>
+                </div>
+            </div>
+
+            <!-- MV按钮 -->
+            <button class="mv-btn" id="mvBtn">
+                <img src="./img/MV.png" alt="MV">
+                <span>观看MV</span>
+            </button>
+        </div>
+
+        <!-- 播放列表 -->
+        <div class="playlist" id="playlist">
+            <div class="playlist-header">
+                <h3>播放列表</h3>
+                <button class="close-btn" id="closeList">×</button>
+            </div>
+            <div class="playlist-items">
+                <div class="playlist-item active" data-index="0">
+                    <span class="item-number">01</span>
+                    <div class="item-info">
+                        <span class="item-title">洛春赋</span>
+                        <span class="item-artist">刘惠</span>
+                    </div>
+                    <span class="item-duration">04:03</span>
+                </div>
+                <div class="playlist-item" data-index="1">
+                    <span class="item-number">02</span>
+                    <div class="item-info">
+                        <span class="item-title">江南烟雨</span>
+                        <span class="item-artist">刘惠</span>
+                    </div>
+                    <span class="item-duration">03:45</span>
+                </div>
+                <div class="playlist-item" data-index="2">
+                    <span class="item-number">03</span>
+                    <div class="item-info">
+                        <span class="item-title">花开彼岸</span>
+                        <span class="item-artist">刘惠</span>
+                    </div>
+                    <span class="item-duration">03:52</span>
+                </div>
+                <div class="playlist-item" data-index="3">
+                    <span class="item-number">04</span>
+                    <div class="item-info">
+                        <span class="item-title">月光下的思念</span>
+                        <span class="item-artist">刘惠</span>
+                    </div>
+                    <span class="item-duration">04:15</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 视频播放器 -->
+        <div class="video-player" id="videoPlayer">
+            <div class="video-header">
+                <h3>MV播放器</h3>
+                <button class="close-btn" id="closeVideo">×</button>
+            </div>
+            <video id="video" controls>
+                <source src="./mp4/video0.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="audio"></audio>
+
+    <script src="./js/player.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
